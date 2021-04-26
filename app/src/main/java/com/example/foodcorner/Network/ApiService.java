@@ -14,4 +14,8 @@ public interface ApiService {
     @Headers({"Content-type: application/json", "Accept: */*"})
     @POST("user/signIn")
     Call<SignResponse> getMovieList(@Body JsonObject body);
+
+    @Headers({"Content-type: application/json", "Accept: */*"})
+    @POST("user/authenticate")
+    Call<SignResponse> verifyEmail(@Body JsonObject body);
 }
