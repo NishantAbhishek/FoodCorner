@@ -39,12 +39,14 @@ public class SignInViewModel extends ViewModel{
                 if(response.isSuccessful()){
                     signInResponse.postValue(response.body());
                 }else{
+                    signInResponse.postValue(new SignResponse(500,"Failed","Failure"));
                     Log.e(TAG,"Failed");
                 }
             }
             @Override
             public void onFailure(Call<SignResponse> call, Throwable t) {
                 Log.e(TAG,"Failed "+t.getMessage());
+                signInResponse.postValue(new SignResponse(500,"Failed","Failure"));
             }
         });
     }

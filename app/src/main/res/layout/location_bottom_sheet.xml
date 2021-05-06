@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="#00FFFFFF"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:background="@drawable/bottom_sheet_dialog"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <EditText
+            android:id="@+id/edSearch"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/grey"
+            android:drawableLeft="@drawable/ic_baseline_search_24"
+            android:textColorHint="@color/grey"
+            android:paddingLeft="5dp"
+            android:textColor="@color/black"
+            android:hint="Choose your location...."
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/tv_search"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+        </EditText>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_margin="10dp"
+            android:id="@+id/recyclerView"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
+</LinearLayout>

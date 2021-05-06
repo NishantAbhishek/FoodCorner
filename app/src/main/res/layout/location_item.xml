@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_marginTop="4dp"
+        android:id="@+id/icon"
+        android:src="@drawable/ic_outline_location_on_24"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        app:tint="@color/quantum_orange700">
+    </ImageView>
+    <TextView
+        android:maxLines="1"
+        android:id="@+id/title"
+        android:textSize="16dp"
+        android:text="Patna"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></TextView>
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:text="Masaurhi Patna...."
+        android:maxLines="1"
+        android:layout_toRightOf="@+id/icon"
+        android:layout_below="@+id/title"
+        android:id="@+id/subTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TextView>
+
+</RelativeLayout>

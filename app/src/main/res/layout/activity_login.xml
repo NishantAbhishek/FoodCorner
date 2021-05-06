@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp">
+    tools:context=".LoginActivity">
     <ImageView
         android:id="@+id/wave"
         android:layout_width="match_parent"
@@ -14,53 +14,15 @@
         android:src="@drawable/ic_wave"
         app:layout_constraintTop_toTopOf="parent">
     </ImageView>
-
     <LinearLayout
-        android:visibility="gone"
-        android:layout_centerVertical="true"
-        android:id="@+id/liLogin"
-        android:layout_margin="30dp"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:gravity="center"
-            android:textSize="18dp"
-            android:textColor="@color/orange_700"
-            android:textAlignment="center"
-            android:text="Account Created, Please login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </TextView>
-        <ImageView
-            android:layout_marginTop="15dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_baseline_verified_user_24"
-            android:layout_width="50dp"
-            android:layout_height="50dp"></ImageView>
-        <Button
-            android:id="@+id/btn_ok"
-            android:text="OK"
-            android:textColor="@color/orange_700"
-            android:background="@drawable/ed_login"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </Button>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/liAuthenticate"
         android:layout_below="@+id/wave"
         android:layout_margin="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/wave">
+        android:orientation="vertical">
         <TextView
             android:textSize="20dp"
-            android:text="Sign Up"
+            android:text="Login"
             android:gravity="center"
             android:textColor="@color/orange_500"
             android:fontFamily="monospace"
@@ -79,30 +41,6 @@
             android:layout_width="match_parent">
         </EditText>
         <EditText
-            android:id="@+id/edFirstName"
-            android:inputType="text"
-            android:textColor="@color/orange_700"
-            android:layout_marginTop="10dp"
-            android:hint="First Name"
-            android:layout_width="match_parent"
-            android:textColorHint="@color/orange_200"
-            android:background="@drawable/ed_login"
-            android:paddingLeft="15dp"
-            android:layout_height="40dp">
-        </EditText>
-        <EditText
-            android:id="@+id/edLastName"
-            android:inputType="text"
-            android:textColor="@color/orange_700"
-            android:layout_marginTop="10dp"
-            android:hint="Last Name"
-            android:layout_width="match_parent"
-            android:textColorHint="@color/orange_200"
-            android:background="@drawable/ed_login"
-            android:paddingLeft="15dp"
-            android:layout_height="40dp">
-        </EditText>
-        <EditText
             android:id="@+id/edPassword"
             android:inputType="textPassword"
             android:textColor="@color/orange_700"
@@ -115,11 +53,11 @@
             android:layout_height="40dp">
         </EditText>
         <Button
-            android:id="@+id/btnSignIn"
+            android:id="@+id/btnLogin"
             android:background="@drawable/ed_login_button"
             android:textColor="@color/white"
             android:layout_marginTop="20dp"
-            android:text="Sign In"
+            android:text="Login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </Button>
@@ -127,8 +65,8 @@
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:textColor="@color/orange_700"
-            android:text="Already have Account, Login"
-            android:id="@+id/tvLogin"
+            android:text="Don't have Account, SignIn"
+            android:id="@+id/tvSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </TextView>

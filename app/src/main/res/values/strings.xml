@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Food Corner</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_cart">Cart</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_account">Account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ApiKey">AIzaSyBsGiPn0AlUPRLz6QRBfvSm0d-oWzeIZyQ</string>
 </resources>

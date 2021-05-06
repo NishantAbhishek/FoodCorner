@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SolashScreen">
+
+    <ImageView
+        android:id="@+id/wave"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="-10dp"
+        android:src="@drawable/ic_wave"
+        app:layout_constraintTop_toTopOf="parent">
+    </ImageView>
+
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerImageSlider"
+            android:paddingStart="80dp"
+            android:paddingEnd="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="450dp">
+        </androidx.viewpager2.widget.ViewPager2>
+
+        <Button
+            android:id="@+id/btnExplore"
+            android:textColor="@color/white"
+            android:text="Start Exploring"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ed_login_button"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Button>
+        <TextView
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:id="@+id/tvLogin"
+            android:text="Already have an account? Login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:id="@+id/tvSignIn"
+            android:text="Don't have an account? SignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -6,7 +6,9 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,12 +35,17 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void instantiateViews(){
+        String login = "<font color=#635E5E>Already have an account? </font><font color=#EA6B0F> Login</font>";
+
         edFirstName = findViewById(R.id.edFirstName);
         edLastName = findViewById(R.id.edLastName);
         edPassword = findViewById(R.id.edPassword);
         edEmail = findViewById(R.id.edEmail);
         btnSignIn = findViewById(R.id.btnSignIn);
         btnSignIn.setOnClickListener(this::onClick);
+        findViewById(R.id.btn_ok).setOnClickListener(this::onClick);
+        findViewById(R.id.tvLogin).setOnClickListener(this::onClick);
+        ((TextView)findViewById(R.id.tvLogin)).setText(Html.fromHtml(login));
     }
 
     @Override
@@ -62,6 +69,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                         @Override
                         public void onChanged(SignResponse signResponse) {
                             snedVerif.dismiss();
+                            Toast.makeText(getApplicationContext(),signResponse.getMessage(),Toast.LENGTH_LONG).show();
                             if(signResponse.getMessage().equals("Verification Mail Sent")){
                                 Dialog verify = new Dialog(SignUp.this);
                                 verify.setContentView(R.layout.verification_dialog);
@@ -77,12 +85,11 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                                             signInViewModel.verificationObserver().observe(SignUp.this, new Observer<SignResponse>() {
                                                 @Override
                                                 public void onChanged(SignResponse signResponse) {
-                                                    Toast.makeText(SignUp.this,signResponse.getMessage(),Toast.LENGTH_LONG).show();
+//                                                    Toast.makeText(SignUp.this,signResponse.getMessage(),Toast.LENGTH_LONG).show();
                                                     if(signResponse.getMessage().equals("Authentication Confirmed")){
-                                                        verify.findViewById(R.id.progressBar).setVisibility(View.GONE);
-                                                        ((TextView)verify.findViewById(R.id.title)).setText("Verification Complete");
-                                                        verify.findViewById(R.id.imgVerified).setVisibility(View.VISIBLE);
-                                                        verify.setCancelable(true);
+                                                        verify.dismiss();
+                                                        findViewById(R.id.liLogin).setVisibility(View.VISIBLE);
+                                                        findViewById(R.id.liAuthenticate).setVisibility(View.GONE);
                                                     }else{
                                                         verify.findViewById(R.id.progressBar).setVisibility(View.GONE);
                                                         verify.findViewById(R.id.liLayoutInput).setVisibility(View.VISIBLE);
@@ -94,10 +101,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                                             verifyEmail.addProperty("Key",code);
                                             signInViewModel.verifyEmail(verifyEmail);
                                         }
-
                                     }
                                 });
-
                             }
                         }
                     });
@@ -111,6 +116,13 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     signInViewModel.signApiCall(jsonObject);
                 }
                 break;
+            case R.id.tvLogin:
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                break;
+            case R.id.btn_ok:
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                break;
+
         }
     }
 }
