@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.foodcorner.Model.LoginResponse;
 import com.example.foodcorner.ViewModel.LoginViewModel;
@@ -69,7 +68,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             if(loginResponse.getMessage().equals("Login Success")){
                                 Log.e(TAG,loginResponse.getAuth());
                                 dialog.dismiss();
-                                SharedPreferences credential = getApplicationContext().getSharedPreferences(Constant.CREDENTIAL_SHARED_PREFERENCE,MODE_PRIVATE);
+                                SharedPreferences credential = getApplicationContext().getSharedPreferences(Constant.CATCHE_USER,MODE_PRIVATE);
                                 SharedPreferences.Editor editor = credential.edit();
                                 editor.putString(Constant.AUTH,loginResponse.getAuth());
                                 editor.putString(Constant.EMAIL,email);

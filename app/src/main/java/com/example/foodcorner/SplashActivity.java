@@ -16,7 +16,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(Constant.CREDENTIAL_SHARED_PREFERENCE,MODE_PRIVATE);
+                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(Constant.CATCHE_USER,MODE_PRIVATE);
                 String user = sharedPreferences.getString(Constant.NAME,"");
                 if(user.equals("")){
                     startActivity(new Intent(SplashActivity.this, SolashScreen.class));

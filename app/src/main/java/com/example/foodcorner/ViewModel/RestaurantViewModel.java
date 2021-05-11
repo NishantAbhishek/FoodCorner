@@ -1,8 +1,9 @@
-package com.example.foodcorner.Model;
+package com.example.foodcorner.ViewModel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.foodcorner.Model.RestaurantList;
 import com.example.foodcorner.Repository.RestaurantRepository;
 
 
@@ -14,7 +15,7 @@ public class RestaurantViewModel extends ViewModel{
     public RestaurantViewModel(){
         restaurantRepository = RestaurantRepository.getInstance();
     }
-    public LiveData<RestaurantList> getRestaurantObserver(int page,int limit){
+    public LiveData<RestaurantList> getRestaurantObserver(int page, int limit){
         return restaurantRepository.getRestaurantList(page,limit);
     }
     public LiveData<RestaurantList> getHPriceyResObserver(int page,int limit){

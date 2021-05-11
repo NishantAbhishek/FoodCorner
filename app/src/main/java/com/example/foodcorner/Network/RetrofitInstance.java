@@ -12,10 +12,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitInstance {
-//    public static String BASE_URL = "http://10.0.2.2:47474/";
+    public static String BASE_URL = "http://10.0.2.2:47474/";
     public static Retrofit retrofit;
 
-    public static String BASE_URL = "http://192.168.0.102:47474/";
+//    public static String BASE_URL = "http://192.168.0.105:47474/";
 
     public static Retrofit getRetrofit(){
         OkHttpClient client = new OkHttpClient.Builder().connectTimeout(10, TimeUnit.SECONDS).readTimeout(10, TimeUnit.SECONDS).build();

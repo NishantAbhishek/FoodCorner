@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".RestaurantActivity">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:indeterminateTint="@color/orange_700"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_width="50dp"
+            android:layout_height="50dp">
+        </ProgressBar>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/starter_image_a"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/restaurantImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+                </ImageView>
+                <TextView
+                    android:id="@+id/tvRestaurantName"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Baba Ka Dhaba"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </TextView>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tvRestaurantPrice"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:text="HIGH Pricy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <RatingBar
+                        android:theme="@style/RatingBar"
+                        android:id="@+id/rbRating"
+                        android:rating="2"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:scaleY="0.8"
+                        android:scaleX="0.8"
+                        android:layout_height="wrap_content">
+                    </RatingBar>
+                </RelativeLayout>
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:map="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                tools:context=".MapsActivity" />
+                <RelativeLayout
+                    android:padding="5dp"
+                    android:background="@drawable/ed_login"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="15dp"
+                        android:id="@+id/eventTitle"
+                        android:textColor="@color/orange_700"
+                        android:gravity="center"
+                        android:text="UpComing Event"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/eventBody"
+                        android:layout_marginTop="8dp"
+                        android:layout_below="@+id/eventTitle"
+                        android:text="Monthly Bumper GiveAway"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+                    </TextView>
+                    <TextView
+                        android:layout_below="@+id/eventBody"
+                        android:textSize="15dp"
+                        android:id="@+id/eventDate"
+                        android:textColor="@color/orange_700"
+                        android:text="28/05/2021"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:padding="5dp"
+                    android:background="@drawable/ed_login"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="15dp"
+                        android:id="@+id/announcementTitle"
+                        android:textColor="@color/orange_700"
+                        android:gravity="center"
+                        android:text="Announcement Date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/announcementBody"
+                        android:layout_marginTop="8dp"
+                        android:layout_below="@+id/announcementTitle"
+                        android:text="Will Not Open after 4 PM Due to Covid Situation"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+                    </TextView>
+                    <TextView
+                        android:layout_below="@+id/announcementBody"
+                        android:textSize="15dp"
+                        android:id="@+id/announcementDate"
+                        android:textColor="@color/orange_700"
+                        android:text="28/05/2021"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                </RelativeLayout>
+                <Button
+                    android:text="Book"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:id="@+id/btnBook"
+                    android:background="@drawable/ed_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </Button>
+            </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

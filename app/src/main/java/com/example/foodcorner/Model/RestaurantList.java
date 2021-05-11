@@ -22,6 +22,8 @@ public class RestaurantList {
     private List<data> data;
 
     public static class data{
+        @SerializedName("RestaurantId")
+        private int RestaurantId;
         @SerializedName("Name")
         private String Name;
         @SerializedName("Rating")
@@ -45,7 +47,8 @@ public class RestaurantList {
         @SerializedName("EventDate")
         private String EventDate;
 
-        public data(String name, int rating, float lat, float lang, String pricy, String imageUrl, String restaurantType, String annoucement, String annoucementDate, String upcomingEvent, String eventDate) {
+        public data(int restaurantId, String name, int rating, float lat, float lang, String pricy, String imageUrl, String restaurantType, String annoucement, String annoucementDate, String upcomingEvent, String eventDate) {
+            RestaurantId = restaurantId;
             Name = name;
             Rating = rating;
             Lat = lat;
@@ -57,6 +60,14 @@ public class RestaurantList {
             AnnoucementDate = annoucementDate;
             UpcomingEvent = upcomingEvent;
             EventDate = eventDate;
+        }
+
+        public int getRestaurantId() {
+            return RestaurantId;
+        }
+
+        public void setRestaurantId(int restaurantId) {
+            RestaurantId = restaurantId;
         }
 
         public String getName() {

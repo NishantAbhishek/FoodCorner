@@ -17,14 +17,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodcorner.Adapter.RestaurantAdapter;
-import com.example.foodcorner.Constant;
 import com.example.foodcorner.Dialog.LocationSheet;
 import com.example.foodcorner.Model.RestaurantList;
-import com.example.foodcorner.Model.RestaurantViewModel;
+import com.example.foodcorner.ViewModel.RestaurantViewModel;
 import com.example.foodcorner.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
     LinearLayout headerLoc;

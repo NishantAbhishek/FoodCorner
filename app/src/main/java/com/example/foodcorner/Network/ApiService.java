@@ -38,4 +38,7 @@ public interface ApiService {
     @POST("/restaurant/highPrice")
     Call<RestaurantList> getHighPriceRestaurant(@Query("page")int page,@Query("limit")int limit);
 
+    @POST("/restaurant/restaurantId")
+    Call<RestaurantList> getRestaurantById(@Query("id") int id);
+
 }

@@ -13,7 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodCorner"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SolashScreen"></activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/ApiKey" />
+        <activity android:name=".RestaurantActivity"></activity>
+        <activity android:name=".SolashScreen" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUp" />
         <activity android:name=".MainActivity" />
