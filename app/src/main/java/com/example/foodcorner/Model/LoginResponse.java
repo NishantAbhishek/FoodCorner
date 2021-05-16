@@ -13,13 +13,17 @@ public class LoginResponse {
     private String auth;
     @SerializedName("Name")
     private String Name;
+    @SerializedName("UserId")
+    private int UserId;
 
-    public LoginResponse(int statusCode, String status, String message, String auth, String name) {
+
+    public LoginResponse(int statusCode, String status, String message, String auth, String name, int userId) {
         StatusCode = statusCode;
         Status = status;
         Message = message;
         this.auth = auth;
         Name = name;
+        UserId = userId;
     }
 
     public int getStatusCode() {
@@ -60,5 +64,13 @@ public class LoginResponse {
 
     public void setName(String name) {
         Name = name;
+    }
+
+    public int getUserId() {
+        return UserId;
+    }
+
+    public void setUserId(int userId) {
+        UserId = userId;
     }
 }

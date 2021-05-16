@@ -35,14 +35,14 @@ public class LoginViewModel extends ViewModel{
                     loginResponse.postValue(response.body());
                 }else{
                     Log.e(TAG,"Failed");
-                    loginResponse.postValue(new LoginResponse(500,"Failure","Failure","",""));
+                    loginResponse.postValue(new LoginResponse(500,"Failure","Failure","","",-1));
                 }
             }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 Log.e(TAG,"Failed "+t.getMessage());
-                loginResponse.postValue(new LoginResponse(500,"Failure","Failure","",""));
+                loginResponse.postValue(new LoginResponse(500,"Failure","Failure","","",-1));
             }
         });
 

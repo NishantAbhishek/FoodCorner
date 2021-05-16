@@ -20,6 +20,7 @@
         </ProgressBar>
 
     <ScrollView
+        android:visibility="gone"
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -56,6 +57,8 @@
                         android:layout_height="wrap_content">
                     </TextView>
                     <RatingBar
+                        android:isIndicator="true"
+                        android:clickable="false"
                         android:theme="@style/RatingBar"
                         android:id="@+id/rbRating"
                         android:rating="2"

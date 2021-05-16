@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.CartFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/tvTitle"
+        android:layout_marginTop="10dp"
+        android:text="My Bookings"
+        android:gravity="center"
+        android:fontFamily="monospace"
+        android:textSize="22dp"
+        android:textColor="@color/orange_700"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+    </TextView>
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvItems"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="10 Items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TextView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_margin="10dp"
+        android:id="@+id/myBooking"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </androidx.recyclerview.widget.RecyclerView>
 
-</FrameLayout>
+</LinearLayout>

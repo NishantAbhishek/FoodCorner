@@ -1,5 +1,7 @@
 package com.example.foodcorner.Network;
+import com.example.foodcorner.Model.BookingItem;
 import com.example.foodcorner.Model.LoginResponse;
+import com.example.foodcorner.Model.NormalResponse;
 import com.example.foodcorner.Model.RestaurantList;
 import com.example.foodcorner.Model.SignResponse;
 import com.google.gson.JsonObject;
@@ -8,6 +10,7 @@ import org.json.JSONObject;
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
@@ -40,5 +43,17 @@ public interface ApiService {
 
     @POST("/restaurant/restaurantId")
     Call<RestaurantList> getRestaurantById(@Query("id") int id);
+
+    @POST("/user/bookRestaurant")
+    Call<NormalResponse> bookRestaurant(@Body JsonObject body);
+
+    @POST("/user/bookings")
+    Call<BookingItem> getBookedRestaurant(@Query("userId")int userId);
+
+    @DELETE("/user/deleteBooked")
+    Call<NormalResponse> removeBooking(@Query("userId")int userId,@Query("bookingId")int bookingId);
+
+    @POST("/restaurant/search")
+    Call<RestaurantList> searchRestaurant(@Query("value")String param);
 
 }

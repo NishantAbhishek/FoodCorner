@@ -63,11 +63,27 @@ public class BookingItem {
         @SerializedName("RestaurantName")
         private String RestaurantName;
         @SerializedName("Rating")
-        private String Rating;
+        private int Rating;
         @SerializedName("ImageUrl")
         private String ImageUrl;
         @SerializedName("RestaurantType")
         private String RestaurantType;
+        @SerializedName("BookingType")
+        private String BookingType;
+
+        public data(int bookingId, int userid, int restauruntId, int numberOfTable, String dateBooked, String timeBooked, String restaurantName, int rating, String imageUrl, String restaurantType, String bookingType) {
+            BookingId = bookingId;
+            Userid = userid;
+            RestauruntId = restauruntId;
+            NumberOfTable = numberOfTable;
+            DateBooked = dateBooked;
+            TimeBooked = timeBooked;
+            RestaurantName = restaurantName;
+            Rating = rating;
+            ImageUrl = imageUrl;
+            RestaurantType = restaurantType;
+            BookingType = bookingType;
+        }
 
         public int getBookingId() {
             return BookingId;
@@ -125,11 +141,11 @@ public class BookingItem {
             RestaurantName = restaurantName;
         }
 
-        public String getRating() {
+        public int getRating() {
             return Rating;
         }
 
-        public void setRating(String rating) {
+        public void setRating(int rating) {
             Rating = rating;
         }
 
@@ -147,6 +163,14 @@ public class BookingItem {
 
         public void setRestaurantType(String restaurantType) {
             RestaurantType = restaurantType;
+        }
+
+        public String getBookingType() {
+            return BookingType;
+        }
+
+        public void setBookingType(String bookingType) {
+            BookingType = bookingType;
         }
     }
 
