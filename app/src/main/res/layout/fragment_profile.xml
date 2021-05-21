@@ -1,14 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/wave"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="120dp"
+        android:layout_marginTop="-23dp"
+        android:src="@drawable/ic_wave">
+    </ImageView>
 
-</FrameLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/body"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:visibility="gone"
+            android:layout_gravity="end"
+            android:id="@+id/imgEdit"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/wave"
+            android:src="@drawable/ic_baseline_edit_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </ImageView>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_below="@+id/wave"
+            android:src="@drawable/profile"
+            android:id="@+id/userProfile"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="120dp"
+            android:layout_height="120dp">
+        </ImageView>
+
+        <TextView
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:layout_below="@+id/userProfile"
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <EditText
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:layout_below="@+id/userProfile"
+            android:id="@+id/edName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/tvName"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <Button
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:id="@+id/btnDone"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:background="@drawable/ed_login_button"
+            android:layout_below="@+id/tvEmail"
+            android:layout_centerHorizontal="true"
+            android:text="Done"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp">
+        </Button>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnConfigure"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:background="@drawable/ed_login_button"
+        android:layout_below="@+id/tvEmail"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+    </Button>
+
+</LinearLayout>

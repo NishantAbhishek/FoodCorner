@@ -4,16 +4,21 @@ import com.example.foodcorner.Model.LoginResponse;
 import com.example.foodcorner.Model.NormalResponse;
 import com.example.foodcorner.Model.RestaurantList;
 import com.example.foodcorner.Model.SignResponse;
+import com.example.foodcorner.Model.UserProfile;
 import com.google.gson.JsonObject;
 
 import org.json.JSONObject;
 import java.util.List;
+
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface ApiService {
@@ -56,4 +61,13 @@ public interface ApiService {
     @POST("/restaurant/search")
     Call<RestaurantList> searchRestaurant(@Query("value")String param);
 
+    @Multipart
+    @POST("/user/profilePic")
+    Call<NormalResponse> uploadImage(@Query("fileName")String fileName, @Part MultipartBody.Part photo);
+
+    @POST("/profile/updateProfile")
+    Call<NormalResponse> updateProfile(@Query("name")String name,@Query("userId")int userId,@Query("imageUrl")String imageUrl);
+
+    @POST("/profile/getUserInfo")
+    Call<UserProfile> getUserProfile(@Query("name")String name,@Query("userId")int userId);
 }
